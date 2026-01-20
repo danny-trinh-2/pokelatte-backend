@@ -18,4 +18,4 @@ djangorestframework-simplejwt = "*"
 django-jsonfield = "*"
 
 [requires]
-python_version = "3.9.7"
+python_version = "3.14.2"
