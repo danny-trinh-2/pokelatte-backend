@@ -54,3 +54,6 @@ To use different frontend or custom domains, update these values in Render:
 | `ALLOWED_HOSTS` | Comma-separated API custom domains, without schemes |
 | `CORS_ALLOWED_ORIGINS` | Comma-separated frontend origins, including `https://` |
 | `CSRF_TRUSTED_ORIGINS` | Comma-separated trusted origins, including `https://` |
+
+The current Amplify origin is
+`https://master.d37jjazwmjw2tx.amplifyapp.com`.
