@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib.auth import views as auth_views
+from django.http import JsonResponse
 from rest_framework import routers
 from pokemon import views
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
@@ -13,7 +13,13 @@ router.register(r'pokemon/evolve', views.PokemonAPIEvolve, 'pokemon-evolve')
 router.register(r'pokemon', views.PokemonAPIView, 'pokemon')
 router.register(r'user', views.CurrentUserView, 'user')
 
+
+def health_check(request):
+    return JsonResponse({'status': 'ok'})
+
+
 urlpatterns = [
+    path('health/', health_check, name='health'),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('', views.HomeView, name='home'),
